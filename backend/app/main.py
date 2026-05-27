@@ -71,7 +71,8 @@ def startup_event():
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173", "https://treetrace-1o7l.onrender.com"],
+    allow_origins=[
+    "http://localhost:5173","https://treetrace-w6yz.vercel.app", ], # ← your Vercel frontend
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
