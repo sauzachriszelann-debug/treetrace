@@ -1,9 +1,12 @@
 import axios from "axios";
 
+
 const api = axios.create({
   baseURL: "https://treetrace-1o7l.onrender.com/api",
   headers: { "Content-Type": "application/json" },
 });
+
+// production endpoint
 
 // Attach JWT from localStorage to every request
 api.interceptors.request.use((config) => {
