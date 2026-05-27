@@ -1,5 +1,6 @@
 {
-  "buildCommand": "chmod +x node_modules/.bin/vite && npm run build",
-  "outputDirectory": "dist",
+  "buildCommand": "chmod +x frontend/node_modules/.bin/vite && cd frontend && npm run build",
+  "outputDirectory": "frontend/dist",
+  "installCommand": "cd frontend && npm ci",
   "framework": "vite"
 }
