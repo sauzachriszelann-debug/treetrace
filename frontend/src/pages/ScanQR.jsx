@@ -78,15 +78,15 @@ export default function ScanQR() {
   };
 
   return (
-    <div className="p-8 max-w-lg mx-auto">
+    <div className="p-4 sm:p-6 lg:p-8 max-w-lg mx-auto animate-page-enter">
       <div className="mb-6">
-        <h1 className="font-fraunces text-3xl font-semibold">QR Scanner</h1>
-        <p className="text-muted-foreground mt-1">
-          Scan a tree's QR code to view its profile
+        <h1 className="font-fraunces text-2xl sm:text-3xl font-semibold">QR Scanner</h1>
+        <p className="text-muted-foreground mt-1 text-sm">
+          Scan a tree&apos;s QR code to view its profile
         </p>
       </div>
 
-      <div className="bg-card border border-border rounded-xl overflow-hidden shadow-sm">
+      <div className="bg-card border border-border/60 rounded-2xl overflow-hidden shadow-sm">
         {/* Camera viewport */}
         <div
           id="qr-reader"

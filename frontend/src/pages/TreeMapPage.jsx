@@ -39,10 +39,10 @@ function InternalTreeMap() {
   const geoTrees = trees.filter((t) => t.lat && t.lng);
 
   return (
-    <div className="p-8">
+    <div className="p-4 sm:p-6 lg:p-8 animate-page-enter">
       <div className="mb-6">
-        <h1 className="font-fraunces text-3xl font-semibold">Tree Map</h1>
-        <p className="text-muted-foreground mt-1">
+        <h1 className="font-fraunces text-2xl sm:text-3xl font-semibold">Tree Map</h1>
+        <p className="text-muted-foreground mt-1 text-sm">
           {isLoading
             ? "Loading…"
             : `${geoTrees.length} of ${trees.length} trees GPS-tagged`}
@@ -50,7 +50,7 @@ function InternalTreeMap() {
       </div>
 
       {/* Summary bar */}
-      <div className="flex gap-4 mb-4 text-sm">
+      <div className="flex flex-wrap gap-4 mb-4 text-sm">
         {[
           { label: "Healthy", color: "bg-emerald-500" },
           { label: "Fair",    color: "bg-amber-500" },
@@ -63,7 +63,7 @@ function InternalTreeMap() {
         ))}
       </div>
 
-      <div className="rounded-xl overflow-hidden border border-border shadow-sm"
+      <div className="rounded-2xl overflow-hidden border border-border/60 shadow-sm"
            style={{ height: "calc(100vh - 260px)" }}>
         <MapContainer
           center={DEFAULT_CENTER}

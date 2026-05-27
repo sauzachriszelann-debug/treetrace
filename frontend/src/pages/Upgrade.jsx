@@ -66,13 +66,13 @@ export default function Upgrade() {
   };
 
   return (
-    <div className="p-8 max-w-6xl mx-auto space-y-7">
+    <div className="p-4 sm:p-6 lg:p-8 max-w-6xl mx-auto space-y-7 animate-page-enter">
       <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
         <div>
-          <h1 className="font-fraunces text-3xl font-semibold text-foreground">
+          <h1 className="font-fraunces text-2xl sm:text-3xl font-semibold text-foreground">
             Revenue Streams & Pricing
           </h1>
-          <p className="text-muted-foreground mt-1 max-w-2xl">
+          <p className="text-muted-foreground mt-1 max-w-2xl text-sm">
             Freemium SaaS access for public users, with paid Pro and institutional plans for advanced conservation work.
           </p>
         </div>

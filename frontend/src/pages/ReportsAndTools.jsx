@@ -284,10 +284,10 @@ export default function ReportsAndTools() {
   };
 
   return (
-    <div className="p-8 max-w-6xl mx-auto">
+    <div className="p-4 sm:p-6 lg:p-8 max-w-6xl mx-auto animate-page-enter">
       <div className="mb-6">
-        <h1 className="font-fraunces text-3xl font-semibold">Reports, Revenue, and Field Tools</h1>
-        <p className="text-muted-foreground mt-1">
+        <h1 className="font-fraunces text-2xl sm:text-3xl font-semibold">Reports, Revenue, and Field Tools</h1>
+        <p className="text-muted-foreground mt-1 text-sm">
           Export inventory data, print QR labels, show business viability, and plan field visits.
         </p>
       </div>

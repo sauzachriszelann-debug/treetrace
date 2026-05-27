@@ -145,12 +145,12 @@ export default function AdminUsers() {
   const upgradeCount  = users.filter((u) => u.upgrade_requested).length;
 
   return (
-    <div className="p-8 max-w-4xl mx-auto">
+    <div className="p-4 sm:p-6 lg:p-8 max-w-4xl mx-auto animate-page-enter">
       {/* Header */}
-      <div className="flex items-start justify-between mb-6">
+      <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4 mb-6">
         <div>
-          <h1 className="font-fraunces text-3xl font-semibold">User Management</h1>
-          <p className="text-muted-foreground mt-1">
+          <h1 className="font-fraunces text-2xl sm:text-3xl font-semibold">User Management</h1>
+          <p className="text-muted-foreground mt-1 text-sm">
             {activeCount} active · {adminCount} admin{adminCount !== 1 ? "s" : ""} · {upgradeCount} upgrade request{upgradeCount !== 1 ? "s" : ""}
           </p>
         </div>

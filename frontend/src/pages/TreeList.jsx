@@ -8,7 +8,7 @@ import {
   SelectTrigger, SelectValue,
 } from "@/components/ui/select";
 import { Button } from "@/components/ui/button";
-import { Search, Plus, TreePine } from "lucide-react";
+import { Search, Plus, TreePine, Leaf } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useAuth } from "@/lib/AuthContext";
 
@@ -33,15 +33,15 @@ export default function TreeList() {
   });
 
   return (
-    <div className="p-8">
-      <div className="flex items-start justify-between mb-6">
+    <div className="p-4 sm:p-6 lg:p-8">
+      <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4 mb-6">
         <div>
-          <h1 className="font-fraunces text-3xl font-semibold">Tree Inventory</h1>
-          <p className="text-muted-foreground mt-1">{trees.length} trees recorded</p>
+          <h1 className="font-fraunces text-2xl sm:text-3xl font-semibold">Tree Inventory</h1>
+          <p className="text-muted-foreground mt-1 text-sm">{trees.length} trees recorded</p>
         </div>
         {canAddOfficialTree && (
           <Link to="/add-tree">
-            <Button className="flex items-center gap-2">
+            <Button className="flex items-center gap-2 shadow-md shadow-primary/15">
               <Plus className="w-4 h-4" />
               Add Tree
             </Button>
@@ -50,18 +50,18 @@ export default function TreeList() {
       </div>
 
       {/* Filters */}
-      <div className="flex gap-3 mb-6">
-        <div className="relative flex-1 max-w-sm">
+      <div className="flex flex-col sm:flex-row gap-3 mb-6">
+        <div className="relative flex-1 max-w-md">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
           <Input
             placeholder="Search by name, species, barangay…"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="pl-9"
+            className="pl-9 h-10"
           />
         </div>
         <Select value={healthFilter} onValueChange={setHealthFilter}>
-          <SelectTrigger className="w-40">
+          <SelectTrigger className="w-full sm:w-44 h-10">
             <SelectValue placeholder="Health Status" />
           </SelectTrigger>
           <SelectContent>
@@ -76,14 +76,16 @@ export default function TreeList() {
       {isLoading ? (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
           {[1, 2, 3, 4, 5, 6].map((i) => (
-            <div key={i} className="h-64 rounded-xl bg-muted animate-pulse" />
+            <div key={i} className="h-72 rounded-xl bg-muted animate-pulse" />
           ))}
         </div>
       ) : filtered.length === 0 ? (
-        <div className="text-center py-20 text-muted-foreground">
-          <TreePine className="w-16 h-16 mx-auto mb-4 opacity-20" />
-          <p className="font-fraunces text-xl">No trees found</p>
-          <p className="text-sm mt-1">Try adjusting your search or add a new tree</p>
+        <div className="text-center py-24 text-muted-foreground">
+          <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-primary/5 mb-5">
+            <TreePine className="w-10 h-10 text-primary/30" />
+          </div>
+          <p className="font-fraunces text-xl text-foreground/70">No trees found</p>
+          <p className="text-sm mt-1.5 text-muted-foreground">Try adjusting your search or add a new tree</p>
         </div>
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">

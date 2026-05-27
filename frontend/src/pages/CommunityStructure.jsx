@@ -46,10 +46,10 @@ export default function CommunityStructure() {
     }));
 
   return (
-    <div className="p-8">
+    <div className="p-4 sm:p-6 lg:p-8 animate-page-enter">
       <div className="mb-6">
-        <h1 className="font-fraunces text-3xl font-semibold">Community Structure</h1>
-        <p className="text-muted-foreground mt-1">
+        <h1 className="font-fraunces text-2xl sm:text-3xl font-semibold">Community Structure</h1>
+        <p className="text-muted-foreground mt-1 text-sm">
           Biodiversity analysis and species distribution across Panabo City
         </p>
       </div>

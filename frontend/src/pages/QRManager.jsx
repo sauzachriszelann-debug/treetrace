@@ -89,13 +89,13 @@ export default function QRManager() {
     :                  "bg-red-500";
 
   return (
-    <div className="p-8">
+    <div className="p-4 sm:p-6 lg:p-8 animate-page-enter">
       <div className="mb-6">
-        <h1 className="font-fraunces text-3xl font-semibold flex items-center gap-3">
-          <QrCode className="w-7 h-7" />
+        <h1 className="font-fraunces text-2xl sm:text-3xl font-semibold flex items-center gap-3">
+          <QrCode className="w-6 h-6 sm:w-7 sm:h-7" />
           QR Code Manager
         </h1>
-        <p className="text-muted-foreground mt-1">
+        <p className="text-muted-foreground mt-1 text-sm">
           Generate and print QR codes for tree traceability
         </p>
       </div>
