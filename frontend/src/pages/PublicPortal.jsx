@@ -67,27 +67,31 @@ export default function PublicPortal() {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero header */}
-      <header className="bg-[#2d5a27] text-white px-8 pt-8 pb-10">
-        <div className="max-w-5xl mx-auto">
-          <div className="inline-flex items-center gap-2 bg-white/15 rounded-lg px-3 py-1.5 mb-5">
-            <div className="w-6 h-6 bg-white/20 rounded-md flex items-center justify-center">
-              <Leaf className="w-3.5 h-3.5 text-white" />
+      <header className="bg-gradient-to-br from-[#1a4a1a] via-[#2d5a27] to-[#1e5430] text-white px-4 sm:px-8 pt-8 pb-10 relative overflow-hidden">
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute -top-20 -right-20 w-72 h-72 bg-white/5 rounded-full blur-3xl" />
+          <div className="absolute -bottom-20 -left-20 w-96 h-96 bg-emerald-400/10 rounded-full blur-3xl" />
+        </div>
+        <div className="max-w-5xl mx-auto relative z-10">
+          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-1.5 mb-5 border border-white/10">
+            <div className="w-6 h-6 bg-white/15 rounded-full flex items-center justify-center">
+              <Leaf className="w-3.5 h-3.5 text-emerald-300" />
             </div>
             <span className="text-white/90 text-sm font-medium">TreeTrace · Public Portal</span>
           </div>
-          <h1 className="font-fraunces text-4xl md:text-5xl font-bold leading-tight mb-3">
+          <h1 className="font-fraunces text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-3">
             Panabo City<br />Tree Inventory
           </h1>
-          <p className="text-white/75 text-base max-w-lg mb-6">
+          <p className="text-white/70 text-sm sm:text-base max-w-lg mb-6">
             Explore the geo-spatial tree inventory of Panabo City. View health status,
             GPS locations, carbon stock data, and scan QR codes to access individual tree profiles.
           </p>
-          <div className="flex flex-wrap gap-x-6 gap-y-1 text-sm text-white/80">
-            <span>Total Trees: <strong className="text-white">{allTrees.length}</strong></span>
-            <span>Healthy: <strong className="text-emerald-300">{healthy}</strong></span>
-            <span>Fair: <strong className="text-amber-300">{fair}</strong></span>
-            <span>Poor: <strong className="text-red-300">{poor}</strong></span>
-            <span>Carbon Stock: <strong className="text-white">{(totalCarbon / 1000).toFixed(2)} t</strong></span>
+          <div className="flex flex-wrap gap-x-5 gap-y-2 text-sm text-white/80">
+            <span className="bg-white/10 px-3 py-1 rounded-full">Total: <strong className="text-white">{allTrees.length}</strong></span>
+            <span className="bg-emerald-500/20 px-3 py-1 rounded-full">Healthy: <strong className="text-emerald-300">{healthy}</strong></span>
+            <span className="bg-amber-500/20 px-3 py-1 rounded-full">Fair: <strong className="text-amber-300">{fair}</strong></span>
+            <span className="bg-red-500/20 px-3 py-1 rounded-full">Poor: <strong className="text-red-300">{poor}</strong></span>
+            <span className="bg-white/10 px-3 py-1 rounded-full">Carbon: <strong className="text-white">{(totalCarbon / 1000).toFixed(2)} t</strong></span>
           </div>
         </div>
       </header>

@@ -28,10 +28,10 @@ export default function HealthLogs() {
   };
 
   return (
-    <div className="p-8">
+    <div className="p-4 sm:p-6 lg:p-8 animate-page-enter">
       <div className="mb-6">
-        <h1 className="font-fraunces text-3xl font-semibold">Health Logs</h1>
-        <p className="text-muted-foreground mt-1">
+        <h1 className="font-fraunces text-2xl sm:text-3xl font-semibold">Health Logs</h1>
+        <p className="text-muted-foreground mt-1 text-sm">
           All tree health assessments — {logs.length} records
         </p>
       </div>
@@ -43,15 +43,17 @@ export default function HealthLogs() {
           ))}
         </div>
       ) : logs.length === 0 ? (
-        <div className="text-center py-20 text-muted-foreground">
-          <Activity className="w-16 h-16 mx-auto mb-4 opacity-20" />
-          <p className="font-fraunces text-xl">No health logs yet</p>
-          <p className="text-sm mt-1">Assessments will appear here once recorded from a tree's detail page.</p>
+        <div className="text-center py-24 text-muted-foreground">
+          <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-primary/5 mb-5">
+            <Activity className="w-10 h-10 text-primary/30" />
+          </div>
+          <p className="font-fraunces text-xl text-foreground/70">No health logs yet</p>
+          <p className="text-sm mt-1.5">Assessments will appear here once recorded from a tree&apos;s detail page.</p>
         </div>
       ) : (
         <div className="space-y-3">
           {logs.map((log) => (
-            <Card key={log.id} className="border-border">
+            <Card key={log.id} className="border-border/60 hover:shadow-md transition-all duration-200">
               <CardContent className="p-4">
                 <div className="flex items-start justify-between">
                   <div className="flex items-start gap-4">

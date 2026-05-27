@@ -76,10 +76,10 @@ export default function UnknownSpeciesReview() {
   };
 
   return (
-    <div className="p-8 max-w-6xl mx-auto">
+    <div className="p-4 sm:p-6 lg:p-8 max-w-6xl mx-auto animate-page-enter">
       <div className="mb-6">
-        <h1 className="font-fraunces text-3xl font-semibold">Unknown Species Review</h1>
-        <p className="text-muted-foreground mt-1">
+        <h1 className="font-fraunces text-2xl sm:text-3xl font-semibold">Unknown Species Review</h1>
+        <p className="text-muted-foreground mt-1 text-sm">
           Review community-submitted tree photos, identify species, and build the local TreeTrace knowledge base.
         </p>
       </div>
